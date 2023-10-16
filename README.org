@@ -1,0 +1,38 @@
+* Discord Rich Presence for Emacs
+
+[[./images/presence-preview.png]]
+
+** Installation
+
+*** Manual Installation
+
+Place `presence.el` in an Emacs-findable directory. On Windows, ensure `stdpipe.ps1` is in the same directory.
+
+** Quick Start
+
+Enable "presence-mode" by adding this to your Emacs configuration:
+
+#+BEGIN_SRC emacs-lisp
+(require 'presence)
+(presence-mode)
+#+END_SRC
+
+Customize settings using:
+
+#+BEGIN_SRC emacs-lisp
+M-x customize-group RET presence RET
+#+END_SRC
+
+** Icon Customization
+
+Personalize icons for activities and modes. Icons are tied to your Discord application ID in `presence-client-id`. To suggest new icons, open an [[./issues][issue]].
+
+*** Create Your Own Discord Application
+
+Craft a custom 'Application':
+
+1. Visit [[https://discordapp.com/developers/applications/me/][Discord's application page]].
+
+2. Upload icons as "small" assets.
+
+Configure `presence-client-id` with your new application's ID and set `presence-mode-icon-alist` to use your icons.
