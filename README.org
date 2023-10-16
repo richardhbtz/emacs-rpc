@@ -6,7 +6,7 @@
 
 ** Overview
 
-=presence.el= is an Emacs package that allows you to seamlessly integrate Emacs with Discord's Rich Presence feature. When you enable the global minor mode `presence-mode`, this package communicates with your local Discord client to showcase information under the 'Playing a Game' status. It updates this information at regular intervals.
+=presence.el= is an Emacs package that allows you to seamlessly integrate Emacs with Discord's Rich Presence feature. When you enable the global minor mode =presence-mode=, this package communicates with your local Discord client to showcase information under the 'Playing a Game' status. It updates this information at regular intervals.
 
 ** Installation
 

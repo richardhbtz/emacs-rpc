@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2023 richardhbtz
 
-;; Author: heatingdevice
+;; Author: richardhbtz
 ;;      Richard Habitzreuter <richardhabitzreuter@icloud.com>
 ;; Created: 15 Oct 2023
 ;; Version: 1.0.0
@@ -133,7 +133,7 @@ Note, these icon names must be available as 'small_image' in Discord."
                                     (julia-mode . "Julia")
                                     (lisp-mode . "Common Lisp")
                                     (markdown-mode . "Markdown")
-                                    (magit-mode . "It's Magit!")
+                                    (magit-mode . "Magit")
                                     ("mhtml-mode" . "HTML")
                                     (nim-mode . "Nim")
                                     (ocaml-mode . "OCaml")
