@@ -535,11 +535,11 @@ If no text is available, use the value of `mode-name'."
      (presence-use-major-mode-as-main-icon
       (setq large-text text
             large-image icon
-            small-text presence--editor-name
-            small-image (presence--editor-icon)))
+            small-text (if presence--idle-status "Idle" presence--editor-name)
+            small-image (if presence--idle-status (presence--resolve-icon-base "idle") (presence--editor-icon))))
      (t
-      (setq large-text presence--editor-name
-            large-image (presence--editor-icon)
+      (setq large-text (if presence--idle-status "Idle" presence--editor-name)
+            large-image (if presence--idle-status (presence--resolve-icon-base "idle") (presence--editor-icon))
             small-text text
             small-image icon)))
     (cond
@@ -674,7 +674,7 @@ If there is no 'previous' buffer attempt to find a non-boring buffer to initiali
     (let* ((activity
             `(("assets" . (,@(presence--mode-icon-and-text)))
               ("timestamps" ("start" ,@(string-to-number (format-time-string "%s" (current-time)))))
-              ("details" . "Idle") ("state" .  ,presence-idle-message)))
+              ("details" . "Idling") ("state" .  ,presence-idle-message)))
            (nonce (format-time-string "%s%N"))
            (presence
             `(("cmd" . "SET_ACTIVITY")
