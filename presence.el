@@ -208,9 +208,9 @@ Swap this with your own function if you want a custom buffer-details message."
   :type '(choice (const :tag "Editor Default" nil)
                  (const :tag "Emacs" "emacs")
                  (const :tag "Doom" "doomemacs")
-                 (const :tag "Doom [LARGE]" "doomemacs-gruv")
+                 (const :tag "Doom [LARGE]" "doomemacs-large")
                  (const :tag "Doom Gruv" "doomemacs-gruv")
-                 (const :tag "Doom Gruv [LARGE]" "doomemacs-gruv"))
+                 (const :tag "Doom Gruv [LARGE]" "doomemacs-gruv-large"))
   :group 'presence)
 
 (defcustom presence-boring-buffers-regexp-list '("^ "
