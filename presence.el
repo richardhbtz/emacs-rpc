@@ -208,7 +208,9 @@ Swap this with your own function if you want a custom buffer-details message."
   :type '(choice (const :tag "Editor Default" nil)
                  (const :tag "Emacs" "emacs")
                  (const :tag "Doom" "doomemacs")
+                 (const :tag "Doom [LARGE]" "doomemacs-large"))
                  (const :tag "Doom Gruv" "doomemacs-gruv"))
+                 (const :tag "Doom Gruv [LARGE]" "doomemacs-gruv-large"))
   :group 'presence)
 
 (defcustom presence-boring-buffers-regexp-list '("^ "
@@ -486,7 +488,7 @@ otherwise if it is a function, call it with `mode' and return that value."
 (defun presence--editor-icon ()
   "The icon to use to represent the current editor."
   (cond
-   ((progn presence-editor-icon) presence-editor-icon)
+   ((progn presence-editor-icon) (presence--resolve-icon-base presence-editor-icon))
    ((boundp 'spacemacs-version) (presence--resolve-icon-base "emacs"))
    ((boundp 'doom-version) (presence--resolve-icon-base "doomemacs"))
    (t (presence--resolve-icon-base "emacs"))))
