@@ -73,7 +73,7 @@ See <https://discordapp.com/developers/applications/me>."
                                     (csharp-mode . "csharp")
                                     (dockerfile-mode . "docker")
                                     (elixir-mode . "elixir")
-                                    (emacs-lisp-mode . (presence--editor-icon))
+                                    (emacs-lisp-mode . "emacs")
                                     (enh-ruby-mode . "ruby")
                                     (erlang-mode . "erlang")
                                     (fortran-mode . "fortran")
@@ -206,14 +206,9 @@ Swap this with your own function if you want a custom buffer-details message."
 (defcustom presence-editor-icon 'nil
   "Icon to use for the text editor. When nil, use the editor's native icon."
   :type '(choice (const :tag "Editor Default" nil)
-                 (const :tag "Emacs" "emacs_icon")
-                 (const :tag "Emacs (Pen)" "emacs_pen_icon")
-                 (const :tag "Emacs (Material)" "emacs_material_icon")
-                 (const :tag "Emacs (Legacy)" "emacs_legacy_icon")
-                 (const :tag "Emacs (Dragon)" "emacs_dragon_icon")
-                 (const :tag "Spacemacs" "spacemacs_icon")
-                 (const :tag "Doom" "doom_icon")
-                 (const :tag "Doom Cute" "doom_cute_icon"))
+                 (const :tag "Emacs" "emacs")
+                 (const :tag "Doom" "doomemacs")
+                 (const :tag "Doom Gruv" "doomemacs-gruv"))
   :group 'presence)
 
 (defcustom presence-boring-buffers-regexp-list '("^ "
@@ -491,9 +486,9 @@ otherwise if it is a function, call it with `mode' and return that value."
 (defun presence--editor-icon ()
   "The icon to use to represent the current editor."
   (cond
-   ((progn presence-editor-icon) (presence--resolve-icon-base "emacs"))
+   ((progn presence-editor-icon) presence-editor-icon)
    ((boundp 'spacemacs-version) (presence--resolve-icon-base "emacs"))
-   ((boundp 'doom-version) (presence--resolve-icon-base "emacs"))
+   ((boundp 'doom-version) (presence--resolve-icon-base "doomemacs"))
    (t (presence--resolve-icon-base "emacs"))))
 
 (defun presence--mode-icon ()
